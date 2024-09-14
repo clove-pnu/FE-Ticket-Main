@@ -11,7 +11,7 @@ module.exports = (_, argv) => {
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist'),
-      publicPath: '/',
+      publicPath: isProduction ? '/page/play/name1' : '/',
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.css'],
@@ -76,7 +76,7 @@ module.exports = (_, argv) => {
           target: 'http://34.47.117.26',
         },
         {
-          context: ['/deploy'],
+          context: ['/event'],
           target: 'http://34.47.117.26',
         },
       ],

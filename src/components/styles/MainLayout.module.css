@@ -1,0 +1,44 @@
+@media (min-width: 1280px) {
+  .container {
+    width: 1187px;
+  }
+
+  .left {
+    width: 540px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 1rem;
+}
+
+.homeLink {
+  display: flex;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: black;
+  text-decoration: none;
+}
+
+.searchBar {
+  width: 100%;
+}

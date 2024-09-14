@@ -8,11 +8,15 @@ export default function MainLayout() {
       <div className={styles.header}>
         <div className={styles.left}>
           <div>
-            <Link className={styles.homeLink} to="/">Clove</Link>
+            <Link
+              className={styles.homeLink}
+              to={process.env.NODE_ENV === 'production'
+                ? 'http://34.47.117.26/page/main'
+                : 'http://localhost:3000'}
+            >
+              Clove
+            </Link>
           </div>
-          {/* <div className={styles.searchBar}>
-            <SearchBar />
-          </div> */}
         </div>
         <UserStatusBarWrapper />
       </div>
