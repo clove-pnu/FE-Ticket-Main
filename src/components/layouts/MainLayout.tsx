@@ -12,7 +12,7 @@ export default function MainLayout() {
               className={styles.homeLink}
               to={process.env.NODE_ENV === 'production'
                 ? 'http://34.47.117.26/page/main'
-                : 'http://localhost:3000'}
+                : 'http://localhost:3000/page/main'}
             >
               Clove
             </Link>
