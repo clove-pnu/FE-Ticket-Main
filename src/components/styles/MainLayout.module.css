@@ -1,20 +1,4 @@
-@media (min-width: 1280px) {
-  .container {
-    width: 1187px;
-  }
-
-  .left {
-    width: 540px;
-  }
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  min-height: 100vh;
-}
-
+/* All */
 .header {
   display: flex;
   flex-direction: row;
@@ -39,6 +23,20 @@
   text-decoration: none;
 }
 
-.searchBar {
-  width: 100%;
+/* Mobile */
+@media (width < 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Desktop */
+@media (width >= 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 1024px;
+  }
 }
