@@ -5,13 +5,14 @@ const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = (_, argv) => {
   const isProduction = argv.mode === 'production';
+  const serverURL = 'http://cse.ticketclove.com';
 
   return {
     entry: './src/index.tsx',
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist'),
-      publicPath: '/',
+      publicPath: isProduction ? 'play/' : '/',
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.css'],
@@ -55,8 +56,8 @@ module.exports = (_, argv) => {
       new ModuleFederationPlugin({
         name: 'ticket-main',
         remotes: {
-          auth: `auth@${isProduction ? 'http://34.47.117.26/page/auth' : 'http://localhost:3001'}/remoteEntry.js`,
-          ticket: `ticket@${isProduction ? 'http://34.47.117.26/page/ticket' : 'http://localhost:3004'}/remoteEntry.js`,
+          auth: `auth@${isProduction ? `${serverURL}/page/auth` : 'http://localhost:3001'}/remoteEntry.js`,
+          ticket: `ticket@${isProduction ? `${serverURL}/page/ticket` : 'http://localhost:3004'}/remoteEntry.js`,
         },
         shared: ['react', 'react-dom', 'react-router-dom', 'axios'],
       }),
@@ -72,12 +73,8 @@ module.exports = (_, argv) => {
       historyApiFallback: true,
       proxy: [
         {
-          context: ['/auth'],
-          target: 'http://34.47.117.26',
-        },
-        {
-          context: ['/deploy'],
-          target: 'http://34.47.117.26',
+          context: ['/auth', '/event', '/seat', '/default/event', '/default/seat'],
+          target: serverURL,
         },
       ],
     },

@@ -4,8 +4,10 @@ declare module '*.module.css' {
 }
 
 // Auth
-declare module 'auth/LoginPage';
-declare module 'auth/SignupPage';
 declare module 'auth/AuthProvider';
 declare module 'auth/UserStatusBar';
 declare module 'auth/PrivateRoute';
+
+// Ticket
+declare module 'ticket/TicketProvider';
+declare module 'ticket/PlayTicketingPage';

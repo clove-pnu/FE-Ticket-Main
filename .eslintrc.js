@@ -81,5 +81,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'import/no-unresolved': 'off',
+    'no-underscore-dangle': 'off',
+    'import/first': 'off',
   },
 };

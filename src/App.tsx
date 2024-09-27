@@ -1,17 +1,20 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuthProviderWrapper from './remotes/AuthProviderWrapper';
-import UserStatusBarWrapper from './remotes/UserStatusBarWrapper';
+import MainLayout from './components/layouts/MainLayout';
+import TicketProviderWrapper from './remotes/TicketProviderWrapper';
+import PlayTicketingPageWrapper from './remotes/PlayTicketingPageWrapper';
 
 export default function App() {
   return (
-  // <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/page/main' : '/'}>
     <AuthProviderWrapper>
       <BrowserRouter basename="/">
-        <Routes>
-          <Route element={<UserStatusBarWrapper />}>
-            <Route path="/" element={<div>Good</div>} />
-          </Route>
-        </Routes>
+        <TicketProviderWrapper>
+          <Routes>
+            <Route element={<MainLayout />}>
+              <Route path="/:namespace/page/play" element={<PlayTicketingPageWrapper />} />
+            </Route>
+          </Routes>
+        </TicketProviderWrapper>
       </BrowserRouter>
     </AuthProviderWrapper>
   );
