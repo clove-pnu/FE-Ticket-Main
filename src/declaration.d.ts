@@ -10,5 +10,4 @@ declare module 'auth/PrivateRoute';
 
 // Ticket
 declare module 'ticket/TicketProvider';
-declare module 'ticket/PlayDetailTicketingPage';
 declare module 'ticket/PlayTicketingPage';
