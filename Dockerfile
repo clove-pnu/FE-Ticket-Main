@@ -23,10 +23,10 @@ FROM nginx:1.27
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy built files
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html/page/play
 
 # Change authority of build files
-RUN chown -R nginx:nginx /usr/share/nginx/html
+RUN chown -R nginx:nginx /usr/share/nginx/html/page/play
 
 # Run Nginx
 CMD ["nginx", "-g", "daemon off;"]
