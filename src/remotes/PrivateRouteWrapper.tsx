@@ -1,6 +1,7 @@
 import {
   Component, lazy, Suspense,
 } from 'react';
+import Loading from '../components/common/Loading';
 
 interface State {
   hasError: boolean;
@@ -26,7 +27,7 @@ class PrivateRouteWrapper extends Component<any, State> {
     }
 
     return (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <PrivateRoute />
       </Suspense>
     );

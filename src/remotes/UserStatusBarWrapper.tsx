@@ -1,4 +1,5 @@
 import { Component, lazy, Suspense } from 'react';
+import Loading from '../components/common/Loading';
 
 interface State {
   hasError: boolean;
@@ -28,7 +29,7 @@ class UserStatusBarWrapper extends Component<any, State> {
     }
 
     return (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <UserStatusBar />
       </Suspense>
     );

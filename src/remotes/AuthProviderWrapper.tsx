@@ -1,6 +1,7 @@
 import {
   Component, lazy, ReactNode, Suspense,
 } from 'react';
+import Loading from '../components/common/Loading';
 
 interface Props {
   children: ReactNode;
@@ -31,7 +32,7 @@ class AuthProviderWrapper extends Component<Props, State> {
     }
 
     return (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <AuthProvider>{children}</AuthProvider>
       </Suspense>
     );
