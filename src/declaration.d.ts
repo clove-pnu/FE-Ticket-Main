@@ -7,9 +7,7 @@ declare module '*.module.css' {
 declare module 'auth/AuthProvider';
 declare module 'auth/UserStatusBar';
 declare module 'auth/PrivateRoute';
-declare module 'auth/CustomerRoute';
 
 // Ticket
 declare module 'ticket/TicketProvider';
 declare module 'ticket/PlayTicketingPage';
-declare module 'ticket/TicketingResultPage';
